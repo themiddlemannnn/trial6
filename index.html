@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-fullscreen">
+    <title>3D Ball Social Space</title>
+    <link rel="icon" href="data:,">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="deviceSelectionModal">
+        <div class="modal-content">
+            <h2>Select Your Device</h2>
+            <p>This helps us optimize the controls for your experience.</p>
+            <div class="modal-buttons">
+                <button id="desktopButton">🖥️ Desktop / Laptop</button>
+                <button id="mobileButton">📱 Mobile / Tablet</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="ui">
+        <div>Players Online: <span id="playerCount">16</span></div>
+        <button id="focusBillboardButton">Focus on Billboard</button>
+    </div>
+    <div id="systemLog"></div>
+    <div id="settingsIcon">⚙️</div>
+
+    <div id="settingsPanel">
+        <button id="closeSettingsButton">✕</button>
+        <div id="mainSettingsContent" class="settings-content">
+            <h2>Settings</h2>
+            <div class="settings-group">
+                <label>Camera Mode: <span id="modeText">Auto Follow</span></label>
+                <button id="cameraToggle">Toggle Camera</button>
+            </div>
+            <div class="settings-group">
+                <label>Zoom</label>
+                <div class="button-row">
+                    <button id="zoomInButton">Zoom In</button>
+                    <button id="zoomOutButton">Zoom Out</button>
+                </div>
+            </div>
+            <div class="settings-group">
+                <label>Audio</label>
+                <button id="muteButton">Mute Audio</button>
+            </div>
+            <div class="settings-group">
+                <label>Display</label>
+                <button id="fullscreenButton">Toggle Fullscreen</button>
+            </div>
+            <div class="settings-group">
+                <button id="howToPlayButton">How to Play</button>
+            </div>
+        </div>
+
+        <div id="howToPlayPanel" class="settings-content">
+            <button id="backToSettingsButton">← Back</button>
+            <h2>How To Play (Desktop)</h2>
+            <div class="control-list">
+                <div class="control-item"><strong>Movement:</strong> WASD or Arrow Keys</div>
+                <div class="control-item"><strong>Jump:</strong> Spacebar</div>
+                <div class="control-item"><strong>Speed:</strong> Hold Shift</div>
+                <div class="control-item"><strong>Camera:</strong> Left-click + Drag to rotate</div>
+                <div class="control-item"><strong>Zoom:</strong> Mouse Wheel</div>
+            </div>
+        </div>
+    </div>
+
+    <div id="chatContainer">
+        <input type="text" id="chatInput" placeholder="Type a message..." maxlength="50">
+        <button id="sendButton">Send</button>
+    </div>
+    <div id="mobileControls">
+        <div id="joystickArea">
+            <div id="joystickBase"></div>
+            <div id="joystickStick"></div>
+        </div>
+        <div id="jumpButton">JUMP</div>
+        <div id="sprintButton">SPRINT</div>
+    </div>
+    <div id="exitFocusButton">Exit</div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
+    <script type="module" src="main.js"></script>
+</body>
+</html>
